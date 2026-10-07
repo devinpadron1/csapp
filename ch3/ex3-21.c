@@ -1,6 +1,28 @@
-/* Exercise 3.21
- * Fill in the missing expressions in the C function.
- */
+// Exercise 3.21
+//
+// Starting with this C code, fill in the missing expressions:
+//
+// (The C template is the code below this comment.)
+//
+// gcc generates:
+//
+//     # x in %rdi, y in %rsi
+//     test:
+//         leaq  0(,%rdi,8), %rax
+//         testq %rsi, %rsi
+//         jle   .L2
+//         movq  %rsi, %rax
+//         subq  %rdi, %rax
+//         movq  %rdi, %rdx
+//         andq  %rsi, %rdx
+//         cmpq  %rsi, %rdi
+//         cmovge %rdx, %rax
+//         ret
+//     .L2:
+//         addq  %rsi, %rdi
+//         cmpq  $-2, %rsi
+//         cmovle %rdi, %rax
+//         ret
 
 long test(long x, long y)
 {

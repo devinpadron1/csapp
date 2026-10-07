@@ -1,6 +1,27 @@
-/* Exercise 3.35
- * Fill in the missing expressions in the recursive function.
- */
+// Exercise 3.35
+//
+// For a C function with the following structure, fill in the missing
+// expressions:
+//
+// (The C template is the code below this comment.)
+//
+// gcc generates:
+//
+//     # x in %rdi
+//     rfun:
+//         pushq %rbx
+//         movq  %rdi, %rbx
+//         movl  $0, %eax
+//         testq %rdi, %rdi
+//         je    .L2
+//         shrq  $2, %rdi
+//         call  rfun
+//         addq  %rbx, %rax
+//     .L2:
+//         popq  %rbx
+//         ret
+//
+// What value does rfun store in %rbx? Fill in the missing C expressions.
 
 long rfun(unsigned long x)
 {

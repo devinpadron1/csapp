@@ -1,9 +1,33 @@
-/* Exercise 3.40
- * Write the optimized diagonal-setting function described in ex3-40.md.
- */
+// Exercise 3.40
+//
+// The following C code sets the diagonal elements of a fixed-size array to
+// val:
+//
+//     void fix_set_diag(fix_matrix A, int val)
+//     {
+//         long i;
+//         for (i = 0; i < N; i++)
+//             A[i][i] = val;
+//     }
+//
+// At optimization level -O1, gcc generates:
+//
+//     fix_set_diag:
+//         movl  $0, %eax
+//     .L13:
+//         movl  %esi, (%rdi,%rax)
+//         addq  $68, %rax
+//         cmpq  $1088, %rax
+//         jne   .L13
+//         rep; ret
+//
+// Create fix_set_diag_opt using similar optimizations, in the style of
+// Figure 3.37(b). Use expressions involving N rather than integer constants.
 
-/* Use the chapter's fix_matrix and N definitions when implementing this. */
-void fix_set_diag_opt(/* TODO: fix_matrix A, int val */)
+#define N 16
+typedef int fix_matrix[N][N];
+
+void fix_set_diag_opt(fix_matrix A, int val)
 {
     /* TODO */
 }

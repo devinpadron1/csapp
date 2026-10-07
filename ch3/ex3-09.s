@@ -1,5 +1,21 @@
 # Exercise 3.9
-# Fill in the two omitted instructions described in ex3-9.md.
+#
+# Suppose we want to generate assembly code for the following C function:
+#
+#     long shift_left4_rightn(long x, long n)
+#     {
+#         x <<= 4;
+#         x >>= n;
+#         return x;
+#     }
+#
+# Two instructions are omitted from this assembly. Parameters x and n are
+# stored in %rdi and %rsi, respectively:
+#
+# (The assembly template is the code below this comment.)
+#
+# Fill in the missing instructions. The right shift should be performed
+# arithmetically.
 
 # long shift_left4_rightn(long x, long n)
 # x in %rdi, n in %rsi

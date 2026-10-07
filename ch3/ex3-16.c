@@ -1,6 +1,29 @@
-/* Exercise 3.16
- * Write the goto version and explain the two branches.
- */
+// Exercise 3.16
+//
+// Given the C code:
+//
+//     void cond(long a, long *p)
+//     {
+//         if (p && a > *p)
+//             *p = a;
+//     }
+//
+// gcc generates:
+//
+//     # a in %rdi, p in %rsi
+//     cond:
+//         testq %rsi, %rsi
+//         je    .L1
+//         cmpq  %rdi, (%rsi)
+//         jge   .L1
+//         movq  %rdi, (%rsi)
+//     .L1:
+//         rep; ret
+//
+// Write a C goto version that performs the same computation and mimics the
+// assembly control flow, in the style of Figure 3.16(b). Explain why the
+// assembly contains two conditional branches even though the C code has only
+// one if statement.
 
 void cond(long a, long *p)
 {

@@ -1,6 +1,31 @@
-/* Exercise 3.57
- * Write a C version of funct3 from ex3-57.md.
- */
+// Exercise 3.57
+//
+// Function funct3 has the following prototype:
+//
+//     double funct3(int *ap, double b, long c, float *dp);
+//
+// For this function, GCC generates the following code:
+//
+//     # ap in %rdi, b in %xmm0, c in %rsi, dp in %rdx
+//     funct3:
+//         vmovss      (%rdx), %xmm1
+//         vcvtsi2sd   (%rdi), %xmm2, %xmm2
+//         vucomisd    %xmm2, %xmm0
+//         jbe         .L8
+//         vcvtsi2ssq  %rsi, %xmm0, %xmm0
+//         vmulss      %xmm1, %xmm0, %xmm1
+//         vunpcklps  %xmm1, %xmm1, %xmm1
+//         vcvtps2pd  %xmm1, %xmm0
+//         ret
+//     .L8:
+//         vaddss      %xmm1, %xmm1, %xmm1
+//         vcvtsi2ssq  %rsi, %xmm0, %xmm0
+//         vaddss      %xmm1, %xmm0, %xmm0
+//         vunpcklps  %xmm0, %xmm0, %xmm0
+//         vcvtps2pd  %xmm0, %xmm0
+//         ret
+//
+// Write a C version of funct3.
 
 double funct3(int *ap, double b, long c, float *dp)
 {
