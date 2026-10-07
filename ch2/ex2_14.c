@@ -2,8 +2,6 @@
     CS:APP Practice Problem 2.14
     This is meant to highlight the importance between
     bitwise and logical operators
-
-
 */
 
 #include <stdio.h>
