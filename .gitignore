@@ -44,3 +44,6 @@ labs/archlab-handout/sim/pipe/psim
 labs/archlab-handout/sim/pipe/sim.c
 *.yo
 *-handin.tar
+
+# Copyrighted book text (kept locally, never committed)
+/book/
