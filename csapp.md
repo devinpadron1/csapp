@@ -18,9 +18,9 @@
 
 The only thing that distinguishes different data objects is the context in which we view them."
 
-![alt text](image.png)
+![alt text](img/cache.png)
 
-![alt text](image-1.png)
+![alt text](img/compile.png)
 
 Why are smaller, faster storage devices constlier per byte?
 - Put simply, more resources are devoted to them. More transistors are used in the these caches. These can live in the CPU chip itself which also is very constrained real-estate.
