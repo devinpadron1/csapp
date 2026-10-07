@@ -1,0 +1,46 @@
+# Build artifacts
+*.o
+*.dSYM/
+a.out
+__pycache__/
+*.pyc
+.DS_Store
+
+# Compiled exercises: extensionless files in chN/ (sources are .c/.s/.md)
+/ch*/*
+!/ch*/*.*
+/main
+
+# Lab build outputs (handout-provided binaries like bomb, ctarget, rtarget stay tracked)
+labs/datalab-handout/btest
+labs/datalab-handout/fshow
+labs/datalab-handout/ishow
+labs/cachelab-handout/csim
+labs/cachelab-handout/test-trans
+labs/cachelab-handout/tracegen
+labs/cachelab-handout/.csim_results
+labs/cachelab-handout/.marker
+labs/perflab-handout/driver
+labs/shlab-handout/tsh
+labs/shlab-handout/myspin
+labs/shlab-handout/mysplit
+labs/shlab-handout/mystop
+labs/shlab-handout/myint
+labs/malloclab-handout/mdriver
+labs/proxylab-handout/proxy
+labs/proxylab-handout/tiny/tiny
+labs/proxylab-handout/tiny/cgi-bin/adder
+labs/proxylab-handout/.proxy/
+labs/proxylab-handout/.noproxy/
+labs/archlab-handout/sim/misc/yas
+labs/archlab-handout/sim/misc/yis
+labs/archlab-handout/sim/misc/hcl2c
+labs/archlab-handout/sim/misc/lex.yy.c
+labs/archlab-handout/sim/misc/yas-grammar.c
+labs/archlab-handout/sim/misc/hcl.tab.*
+labs/archlab-handout/sim/seq/ssim
+labs/archlab-handout/sim/seq/sim.c
+labs/archlab-handout/sim/pipe/psim
+labs/archlab-handout/sim/pipe/sim.c
+*.yo
+*-handin.tar
